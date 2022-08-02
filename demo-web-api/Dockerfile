@@ -13,6 +13,6 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-focal
 WORKDIR /app
-EXPOSE 8081
+EXPOSE 80
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "demo-web-api.dll"]
